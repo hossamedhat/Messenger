@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatActivity"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:id="@+id/root_view">
+
+        <androidx.appcompat.widget.Toolbar
+
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar_chat"
+        android:layout_marginTop="5dp"
+        >
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="24dp"
+            android:layout_height="42dp"
+            android:src="@drawable/ic_backspace"
+            android:layout_marginRight="8dp"
+            />
+
+        
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:src="@drawable/user_img"
+            android:layout_marginRight="10dp"
+            android:id="@+id/img_profile_chat"
+            android:layout_marginLeft="-20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="User Name"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/txt_toolbar_chat"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:id="@+id/rec_chat"
+            app:reverseLayout="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginBottom="3dp"
+            android:paddingTop="8dp"
+            android:paddingLeft="3dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rela_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="6dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp">
+
+            <LinearLayout
+                android:id="@+id/lay_chat"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:orientation="horizontal"
+                app:layout_constraintRight_toLeftOf="@+id/lay_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/shape_search"
+                android:visibility="visible"
+                >
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="28dp"
+                    android:id="@+id/emoji_face"
+                    android:src="@drawable/ic_emoji"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="3dp"/>
+
+                <EditText
+                    android:id="@+id/message_people"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shape_search"
+                    android:hint="Message"
+                    android:textColorHint="#CAC7C7"
+                    android:inputType="textMultiLine"
+                    android:paddingLeft="6dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/black"
+                    android:paddingRight="10dp"
+                    />
+
+                <ImageButton
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/img_social"
+                    android:src="@drawable/ic_paperclip"
+                    android:background="@drawable/image_btn_shape"
+                    android:layout_marginTop="2dp"
+                    />
+
+                <ImageButton
+                    android:layout_marginTop="2dp"
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/floating_btn_img"
+                    android:src="@drawable/ic_gallery"
+                    android:background="@drawable/image_btn_shape"
+                    />
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/lay_btn"
+                app:layout_constraintRight_toRightOf="@id/rela_chat"
+                app:layout_constraintBottom_toBottomOf="@id/rela_chat"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="2dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+            </LinearLayout>
+
+
+            <ImageButton
+                android:visibility="gone"
+                android:id="@+id/imageView_send"
+                app:layout_constraintRight_toRightOf="@id/rela_chat"
+                app:layout_constraintBottom_toBottomOf="@id/rela_chat"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_baseline_send_24"
+                android:background="@drawable/recv_bg_mic"
+                android:layout_marginBottom="3dp"
+                />
+
+
+            <com.devlomi.record_view.RecordView
+                android:id="@+id/record_view"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                app:slide_to_cancel_arrow="@drawable/recv_ic_arrow"
+                app:slide_to_cancel_arrow_color="#000000"
+                app:slide_to_cancel_text="Slide To Cancel"
+                app:counter_time_color="#ff0000"
+                app:layout_constraintRight_toLeftOf="@id/record_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:ignore="NotSibling" />
+
+            <com.devlomi.record_view.RecordButton
+                android:id="@+id/record_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/recv_bg_mic"
+                android:scaleType="centerInside"
+                app:mic_icon="@drawable/recv_ic_mic_white"
+                app:layout_constraintRight_toRightOf="@id/rela_chat"
+                app:layout_constraintBottom_toBottomOf="@id/rela_chat"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+
+
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

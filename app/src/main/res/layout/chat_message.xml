@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/chat_text_sender"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:cardBackgroundColor="#3144B1"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rootMessage"
+            android:padding="4dp"
+            android:layout_gravity="right"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chat_time_sender"
+                android:text="12:12 pm"
+                android:gravity="right"
+                android:layout_gravity="bottom|right"
+                android:textSize="15sp"
+                android:paddingRight="4dp"
+                android:paddingLeft="4dp"
+                android:textColor="#EDE5E5"
+                app:layout_constraintTop_toBottomOf="@id/chat_message_sender"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hi! Ahmed hossam medhat"
+                android:id="@+id/chat_message_sender"
+                android:textSize="18sp"
+                android:paddingBottom="8dp"
+                android:paddingRight="4dp"
+                android:paddingLeft="4dp"
+                android:textColor="@color/white"
+                android:layout_gravity="right"
+                android:maxWidth="260dp"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/chat_text_recipient"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:cardBackgroundColor="#AFACAC"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recipientRootMessage"
+            android:padding="4dp"
+            android:layout_gravity="left"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chat_recipient_time"
+                android:text="12:12 pm"
+                android:gravity="right"
+                android:layout_gravity="bottom|right"
+                android:textSize="15sp"
+                android:paddingRight="4dp"
+                android:paddingLeft="4dp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/chat_recipient_message"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hi! Ahmed hossam medhat"
+                android:id="@+id/chat_recipient_message"
+                android:textSize="18sp"
+                android:paddingBottom="8dp"
+                android:paddingRight="4dp"
+                android:paddingLeft="4dp"
+                android:textColor="@color/black"
+
+                android:layout_gravity="right"
+                android:maxWidth="260dp"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/chat_image_sender"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="5dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="15dp"
+        android:padding="10dp"
+        app:cardPreventCornerOverlap="true">
+
+
+
+        <ImageView
+            android:id="@+id/chatSenderImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/gallery_img"
+            android:scaleType="fitXY"/>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chatImageTimeSender"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="8dp"
+        android:text="12:12 pm"
+        android:gravity="right"
+        android:layout_gravity="bottom|right"
+        android:textSize="15sp"
+        android:paddingRight="4dp"
+        android:paddingLeft="4dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/chat_image_sender"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/chat_image_recipient"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="15dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/chatRecipientImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/gallery_img"
+            android:scaleType="fitXY"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chatImageTimeRecipient"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="8dp"
+        android:text="12:12 pm"
+        android:gravity="right"
+        android:layout_gravity="bottom|left"
+        android:textSize="15sp"
+        android:paddingRight="4dp"
+        android:paddingLeft="4dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/chat_image_recipient"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/chat_record_sender"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#3144B1"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:paddingBottom="4dp"
+            android:paddingRight="2dp"
+            android:paddingLeft="2dp"
+            >
+
+            <TextView
+
+                android:id="@+id/chat_record_title_sender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Filename"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:paddingLeft="28dp"
+
+                app:layout_constraintBottom_toTopOf="@+id/lay_list1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/lay_list1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/chat_record_title_sender"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <ImageButton
+                    android:background="#3144B1"
+                    android:id="@+id/chat_record_image_sender"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@drawable/play" />
+
+                <SeekBar
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/chat_record_player_seekbar_sender"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginTop="7dp"
+                    android:id="@+id/chat_record_date_sender"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:text="TextView"/>
+
+
+            </LinearLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/chat_record_recipient"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#AFACAC"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:paddingBottom="4dp"
+            android:paddingRight="2dp"
+            android:paddingLeft="2dp"
+            >
+
+            <TextView
+                android:id="@+id/chat_record_title_recipient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Filename"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:paddingLeft="28dp"
+                app:layout_constraintBottom_toTopOf="@+id/lay_list2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:ignore="UnknownId" />
+
+            <LinearLayout
+                android:id="@+id/lay_list12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/chat_record_title_recipient"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <ImageButton
+                    android:background="#AFACAC"
+                    android:id="@+id/chat_record_image_recipient"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@drawable/play" />
+
+                <SeekBar
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/chat_record_player_seekbar_recipient"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginTop="7dp"
+                    android:id="@+id/chat_record_date_recipient"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:text="TextView"/>
+
+
+            </LinearLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
